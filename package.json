@@ -10,10 +10,10 @@
   "scripts": {
     "build": "tsup"
   },
-  "keywords": [],
+  "keywords": ["authflux", "task scheduling", "mongodb", "automation"],
   "author": "Tamjid Ahmed",
-  "license": "ISC",
-  "description": "",
+  "license": "MIT",
+  "description": "Authflux is a flexible backend package for task scheduling, allowing storage of documents in MongoDB and automated deletion based on user-defined schedules or expiration logic.",
   "devDependencies": {
     "@types/node": "^22.7.4",
     "tsup": "^8.3.0",

@@ -160,7 +160,6 @@ scheduleTaskForUser(field, jobData[field],  milliseconds - createdMilisecond);
 
 // Restore timer
 
-// Export the function as a constant
 export const RestoreTimer = async (referenceField: string): Promise<void> => {
   try {
     // Create a streaming cursor to fetch users with OTPs from the database
@@ -174,9 +173,9 @@ export const RestoreTimer = async (referenceField: string): Promise<void> => {
 
       // console.log(remainingTime, 'expirationTime');
 
-      if (remainingTime > 0) {
-        scheduleTaskForUser(referenceField, user[referenceField], remainingTime); 
-      } else { 
+      if (remainingTime < 0) {
+        scheduleTaskForUser(referenceField, user[referenceField], remainingTime);  
+      } else if(remainingTime > 0) { 
         // console.log(`OTP for user with email ${user[referenceField]} has already expired.`);
         
         // Use promise instead of callback
