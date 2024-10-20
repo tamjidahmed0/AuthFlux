@@ -5,12 +5,17 @@
   "module": "./dist/index.mjs",
   "types": "./dist/index.d.ts",
   "repository": {
-    "url": "https://github.com/tamjidahmed0/AuthFlux"
+    "url": "git+https://github.com/tamjidahmed0/AuthFlux.git"
   },
   "scripts": {
     "build": "tsup"
   },
-  "keywords": ["authflux", "task scheduling", "mongodb", "automation"],
+  "keywords": [
+    "authflux",
+    "task scheduling",
+    "mongodb",
+    "automation"
+  ],
   "author": "Tamjid Ahmed",
   "license": "MIT",
   "description": "Authflux is a flexible backend package for task scheduling, allowing storage of documents in MongoDB and automated deletion based on user-defined schedules or expiration logic.",

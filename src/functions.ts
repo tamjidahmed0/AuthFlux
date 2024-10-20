@@ -158,6 +158,21 @@ scheduleTaskForUser(field, jobData[field],  milliseconds - createdMilisecond);
 
 
 
+// Function to manually clear a scheduled task before the time is up
+export const clearTaskForUser = (referenceValue: string) => {
+  if (otpTimeouts[referenceValue]) {
+    clearTimeout(otpTimeouts[referenceValue]);
+    delete otpTimeouts[referenceValue]; // Remove the timeout from tracking
+    console.log(`Timeout for ${referenceValue} has been cleared.`);
+  } else {
+    console.log(`No active timeout found for ${referenceValue}.`);
+  }
+};
+
+
+
+
+
 // Restore timer
 
 export const RestoreTimer = async (referenceField: string): Promise<void> => {
@@ -191,7 +206,7 @@ export const RestoreTimer = async (referenceField: string): Promise<void> => {
 
 
 
-
+export { JobModel } from './models/jobModel';
 // Export the type explicitly
 export type { JobDocument };
 
