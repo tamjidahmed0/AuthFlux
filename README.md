@@ -21,7 +21,7 @@ npm install authflux
 
 ```ts
 // Import necessary functions from 'authflux'
-import { connectToDatabase, createJob, RestoreTimer } from 'authflux';
+import { connectToDatabase, createJob, RestoreTimer, JobModel } from 'authflux';
 
 /**
  * 1. You should place this in your main file (like `index.ts` or `index.js`).
@@ -52,6 +52,13 @@ RestoreTimer('email');  // 'email' should be the reference field you've used in 
 
 app.post('/create-job', async (req, res) => {
   try {
+
+//add jobModel
+//make your own
+await JobModel.findOne({
+  //filter
+})
+
     const { name, username, email, password, otp, token } = req.body;
 
     // Step 3: Use `createJob` to store a new job with expiry
